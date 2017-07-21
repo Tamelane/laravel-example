@@ -1,0 +1,159 @@
+body{
+    margin: 0;
+}
+#container {
+    background-color: #ffffff;
+
+}
+
+#header {
+    background-color: #ffffff;
+    padding-top: 50px;
+    text-align:left;
+    color:#3e3e3e;
+    padding-left: 50px;
+    border-bottom: 2px solid #101010;
+
+}
+
+
+/*
+#header h3{
+    display: inline-block;
+}
+*/
+#myNavbar {
+    font-weight:bold;
+    text-transform: uppercase;
+
+
+}
+
+ul {
+    list-style-type: none;
+    padding:0px;
+}
+
+
+
+
+#myNavbar li img{
+
+    margin-left: 20px;
+}
+
+
+/*
+#nav1 a{
+    margin-left: 50px;
+    padding:15px;
+    text-decoration: none;
+    color:#fff;
+
+    font-weight:bold;
+
+
+}
+#nav1 li{
+    display: inline;
+}
+#nav1{
+    text-align: left;
+    background-color: #3e3e3e;
+    padding:10px;
+
+}
+
+#nav1 a:hover {
+    color: #317380;
+}*/
+
+#footer a:hover {
+    color: white;
+}
+
+
+
+#content {
+    text-align: left;
+    background-color: #ffffff;
+
+
+
+}
+
+#content p {
+    padding-left: 50px;
+    padding-right: 50px;
+    line-height: 1.5;
+}
+
+#content h3{
+    padding-left: 50px;
+}
+
+#footer {
+    text-align: center;
+    background-color: #101010;
+    padding:10px;
+}
+
+#footer li {
+    display: inline;
+}
+
+#footer a {
+    padding:10px 50px;
+    text-decoration: none;
+    color:#9d9d9d;
+
+    font-weight:bold;
+}
+
+#firstPage a{
+    text-decoration: none;
+    color: #317380;
+
+}
+
+/*
+#firstPage{
+    color:#3e3e3e;
+    background: url("/photos/pic.jpg");
+    background-position: right;
+    background-repeat: no-repeat;
+    margin-right: 50px;
+}
+*/
+
+.margin{
+    margin-left: 50px;
+}
+#contact{
+    color:#3e3e3e;
+    font-weight:bold;
+}
+#about_us{
+    color:#3e3e3e;
+    font-weight:bold;
+}
+
+#contact a{
+    text-decoration: none;
+    color:#317380;
+}
+#table1 td{
+    border: 1px solid black;
+    color:#3e3e3e;
+    font-weight:bold;
+}
+
+#sticks{
+    text-align: center;
+}
+#table3 td, #table2 td, #table1 td{
+    color:#3e3e3e;
+    font-weight:bold;
+    text-align: center;
+    border: 1px solid black;
+}
