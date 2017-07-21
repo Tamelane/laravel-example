@@ -18,4 +18,18 @@ class ProductsController extends Controller
 
     	return view('products.show', compact('product'));
     }
+
+    public function filterByName ($name) {
+    	$product = Product::where('name', $name)->first();
+
+    	return view('products.show', compact('product'));
+    }
+
+    public function filterByCategoryName ($category_name) {
+        $products = Product::whereHas('category', function($q) use($category_name) {
+            $q->where('name', $category_name);
+        })->get();
+
+        return view('products.index', ['products' => $products, 'category' => $category_name]);
+    }
 }

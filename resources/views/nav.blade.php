@@ -13,7 +13,10 @@
       <ul class="nav navbar-nav">
         <li><a href="{{ route('home') }}">Home</a></li>
         <li><a href="{{ route('categories') }}">Categories</a></li>
+        <li><a href="{{ route('filter_category_by_name', ['Category1']) }}">Filter category by name</a></li>
         <li><a href="{{ route('products') }}">Products</a></li>
+        <li><a href="{{ route('filter_product_by_name', ['Product1']) }}">Filter product by name</a></li>
+        <li><a href="{{ route('filter_product_by_category_name', ['Category1']) }}">Filter product by category name</a></li>
       </ul>
     </div>
   </div>

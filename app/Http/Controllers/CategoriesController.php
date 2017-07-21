@@ -18,4 +18,10 @@ class CategoriesController extends Controller
 
     	return view('categories.show', compact('category'));
     }
+
+    public function filterByName ($name) {
+    	$category = Category::where('name', $name)->first();
+
+    	return view('categories.show', compact('category'));
+    }
 }

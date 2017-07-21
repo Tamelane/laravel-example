@@ -2,7 +2,9 @@
 
 @section ('content')
 	<div class="starter-template">
-		<h1>Listing products</h1>
+		<h1>
+			Listing products {{ isset($category) ? "of $category" : "" }}
+		</h1>
 
 		<ul>
 			@foreach ($products as $product)
