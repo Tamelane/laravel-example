@@ -24,4 +24,9 @@ class CategoriesController extends Controller
 
     	return view('categories.show', compact('category'));
     }
+
+    public function filterByX ($name) {
+        dd('ok');
+        var_dump('ok');die;
+    }
 }
