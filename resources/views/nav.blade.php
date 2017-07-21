@@ -60,16 +60,10 @@
                     <li><a href="{{ route('filter_category_by_name', ['specijalne']) }}">Specijalne</a></li>
                 </ul>
             </li>
-            <?php
-/*            require ("functions_def.php");
-            if(isset($_SESSION['id_user']) AND is_numeric($_SESSION['id_user'])){
-
-            echo '<li><a href="logout.php">Logout</a></li>';
-            }*/?>
-            
         </ul>
         <div class="col-sm-3 col-md-3">
-            <form class="navbar-form" role="search" action="{{ route('filter_product_by_name', ['FalconForzaESR-10']) }}" method="get">
+
+          <form class="navbar-form" role="search" action="{{-- url('/product/filter_by_name/namematch') --}}{{ route('filter_product_by_name', ['feeder']) }}" method="get">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Pretraga" name="name">
                     <div class="input-group-btn">
@@ -79,16 +73,9 @@
             </form>
         </div>
 
-
-
-
     </div><!-- /.navbar-collapse -->
 </nav>
     <div id="header">
         <img src="{{asset('/images/logo2.png')}}" alt="logo"/>
         <h3 class="animated fadeInLeftBig">Sve za pecanje na jednom mestu!</h3><br>
-
-
-
     </div>
-

@@ -14,14 +14,17 @@ class ProductsController extends Controller
 	}
 
     public function show ($id) {
+        
     	$product = Product::find($id);
 
     	return view('products.show', compact('product'));
     }
 
     public function filterByName ($name) {
-    	$product = Product::where('name', $name)->first();
-
+       // $name='feeder';
+    	$product = Product::where('name','LIKE','%'.$name)->first();
+       // var_dump($name);
+        //dd($product);
     	return view('products.show', compact('product'));
     }
 
