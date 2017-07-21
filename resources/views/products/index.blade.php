@@ -3,16 +3,20 @@
 @section ('content')
 	<div class="starter-template">
 		<h1>
-			Listing products {{ isset($category) ? "of $category" : "" }}
+			Listing productss {{ isset($category) ? "of $category" : "" }}
 		</h1>
 
 		<ul>
+		<table>
 			@foreach ($products as $product)
-				<li>
+			<tr><td>	<li>
+			
 					<a href="{{ route('product', [$product->id]) }}">
-						{{ $product->name }}
+					<img src="{{asset('$product->picture')}}">	{{ $product->name }}
 					</a>
 				</li>
+			</td>	</tr>
 			@endforeach
+			</table>
 	</div>
 @endsection

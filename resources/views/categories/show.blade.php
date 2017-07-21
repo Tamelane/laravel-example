@@ -5,13 +5,16 @@
 		<h1>Listing products from category '{{ $category->name }}'</h1>
 
 		<ul>
+		<table>
 			@foreach ($category->products as $product)
-				<li>
+				<tr><td><li>
+				
 					<a href="{{ route('product', [$product->id]) }}">
-						{{ $product->name }}
+						<img src="{{asset($product->picture)}}"><br>{{ $product->name }}
 					</a>
-				</li>
+				</li></td></tr>
 			@endforeach
+			</table>
 		</ul>
 	</div>
 @endsection
