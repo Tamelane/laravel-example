@@ -19,10 +19,6 @@
 <meta name="robots" content="index, follow">
 <meta name="googlebot" content="NOODP">
 <meta http-equiv="Content-language" content="sr">
-
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="css/animate.css">
-
 <meta property="og:type"   content="article">
 <meta property="og:url"    content="http://ribolov.webutu.com">
 <meta property="og:title"  content="Ribolovacka oprema">
@@ -37,7 +33,8 @@
     <link rel="icon" href="../../favicon.ico">
 
     <title>Starter Template for Bootstrap</title>
-
+<link href="{{ asset('/css/animate.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <link href="{{ asset('/css/starter-template.css') }}" rel="stylesheet">
