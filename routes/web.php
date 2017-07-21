@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('/products', 'ProductsController@index')->name('products');
 Route::get('/product/{id}', 'ProductsController@show')->name('product');
 Route::get('/product/filter_by_name/{name}', 'ProductsController@filterByName')->name('filter_product_by_name');
+Route::get('/search/', 'ProductsController@search')->name('search');
 Route::get('/product/filter_by_category/{name}', 'ProductsController@filterByCategoryName')->name('filter_product_by_category_name');
 
 
