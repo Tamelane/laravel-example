@@ -40,6 +40,11 @@
 
     <link href="{{ asset('/css/starter-template.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+     <link rel="icon" href="../../favicon.ico">
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="blog.css" rel="stylesheet">
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
   </head>
 
   <body>
@@ -54,8 +59,10 @@
 <div id="footer" class="navbar navbar-fixed-bottom">
         <ul>
             <li><a href="o_nama.php">About us</a></li>
-            <li><a href="kontakt.php">Contakt</a></li>
+            <li><a href="kontakt.php">Contact</a></li>
             <li><a href="{{ route('home') }}">Home</a></li>
+
+        <li><a href="#">Back to top</a></li>
         </ul>
     </div>
   </body>
