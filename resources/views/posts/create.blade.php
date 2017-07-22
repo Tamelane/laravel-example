@@ -2,7 +2,7 @@
 @extends('postslayout');
 @section ('post')
 <h1 class="blog-title">Publish a post</h1>
- <form method="POST" action="{{ route('store') }}">
+ <form method="POST" action="{{ route('apc_store(key, var)') }}">
  {{ csrf_field()}}
   <div class="form-group">
     <label for="title">Title: </label>

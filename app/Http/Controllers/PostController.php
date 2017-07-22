@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Post;
+use App\Comment;
+use Auth;
 class PostController extends Controller
 {
     public function index()
@@ -27,6 +29,7 @@ class PostController extends Controller
     	$post=new Post;
     	$post->title=request('title');
     	$post->body=request('body');
+        $post->user_id=Auth::id();
     	/*Post::create([
     		'title'=>request('title'),
 			'body'=>request('body')
@@ -37,6 +40,7 @@ class PostController extends Controller
     }
     public function show(Post $post)
     {
+        //dd($post);
     	return view('posts.show',compact('post'));
     }
 }
