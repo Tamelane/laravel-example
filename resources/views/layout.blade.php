@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
@@ -43,11 +44,19 @@
 
   <body>
   	@include('nav')
-
+        @yield('home');
     <div class="container">
 
   		  @yield('content')
 
+    </div>
+ </div>
+<div id="footer" class="navbar navbar-fixed-bottom">
+        <ul>
+            <li><a href="o_nama.php">About us</a></li>
+            <li><a href="kontakt.php">Contakt</a></li>
+            <li><a href="{{ route('home') }}">Home</a></li>
+        </ul>
     </div>
   </body>
 </html>

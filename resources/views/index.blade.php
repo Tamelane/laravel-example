@@ -1,7 +1,14 @@
 @extends('layout')
 
+@section('home')
+<div class="starter-template">
+     <div id="header">
+        <img src="{{asset('/images/logo2.png')}}" alt="logo"/>
+        <h3 class="animated fadeInLeftBig"> Everything for fishing in one place!</h3><br>
+    </div>
+@endsection
 @section ('content')
-	<div class="starter-template">
+
 	
 		   <h3>This site is a school project</h3>
         <p>
@@ -16,5 +23,6 @@
         <a href="http://www.nintendosrbija.byethost14.com/" class="margin" target="_blank"><img src="{{asset('/images/nint.jpg')}}" alt="nintendo sajt"></a>
         <a href="http://domacisapuni.freetzi.com//"  target="_blank" class="margin"><img src="{{asset('/images/logosapuni.png')}}" alt="sapuni sajt"></a><br><br>
         <a href="http://kulen.student.yunethosting.rs/"  target="_blank" class="margin"><img src="{{asset('/images/kulen.jpg')}}" alt="Kulen sajt" style="width:150px;"></a><br><br>
+
 	</div>
 @endsection

@@ -60,7 +60,3 @@
 
     </div><!-- /.navbar-collapse -->
 </nav>
-    <div id="header">
-        <img src="{{asset('/images/logo2.png')}}" alt="logo"/>
-        <h3 class="animated fadeInLeftBig"> Everything for fishing in one place!</h3><br>
-    </div>
