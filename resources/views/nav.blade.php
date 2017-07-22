@@ -38,9 +38,9 @@
             </li>
         </ul>
         <div class="col-sm-3 col-md-3">
-            {!! Form::open(array('method' => 'Get', 'route' => 'search')) !!}
-{!! Form::text('search') !!}
-<button>Search</button>
+{!! Form::open(array('method' => 'Get', 'class'=>'navbar-form','route' => 'search')) !!} <div class="input-group">
+{!! Form::text('first_name', '', array('class' => 'form-control','name'=>'search')) !!}<div class="input-group-btn">
+<button class="btn btn-default"><i class="glyphicon glyphicon-search"></i>  </button>   </div></div>
 {!! Form::close() !!}
         </div>
 
