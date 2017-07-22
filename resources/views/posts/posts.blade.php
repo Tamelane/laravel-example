@@ -8,7 +8,8 @@
 	{{$post->title}}
 </a>
 	</h1>
-	<p class="blog-post-meta">Posted: {{$post->created_at->toFormattedDateString()}}</p>
+	<p class="blog-post-meta">Posted by: 
+	{{$post->username($post->user_id)}}:  {{$post->created_at->toFormattedDateString()}}</p>
 	
 {{$post->body}}
 @endforeach

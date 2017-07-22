@@ -21,8 +21,8 @@ Route::get('/product/filter_by_category/{name}', 'ProductsController@filterByCat
 //Posts
 Route::get('/posts/all', 'PostController@index');
 Route::get('/posts/{post}', 'PostController@show')->name('posts');
-Route::post('/posts/{post}/comments', 'CommentsController@store');
-Route::get('/createposts/create', 'PostController@create')->name('create');
+Route::post('/posts/{post}/comments', 'CommentsController@store')->middleware('auth');
+Route::get('/createposts/create', 'PostController@create')->name('create')->middleware('auth');
 Route::post('/createposts/', 'PostController@store')->name('apc_store(key, var)');
 
 Route::get('/categories', 'CategoriesController@index')->name('categories');

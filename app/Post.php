@@ -17,4 +17,10 @@ class Post extends Model
 	//	$this->comments()->create(compact('data'));
 		$this->comments()->create(['user_id' => Auth::id(),'body' => $body]);
 	}
+	   public function username($id)
+    {
+    	$user = User::find($id);
+    	return $user->name;
+    }
+
 }
