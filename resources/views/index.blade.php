@@ -3,13 +3,13 @@
 @section ('content')
 	<div class="starter-template">
 	
-		   <h3>Ovaj sajt je školski projekat</h3>
+		   <h3>This site is a school project</h3>
         <p>
-            Korištene su fotografije sa <a href="http://www.topfish.rs" target="_blank">TopFish</a> sajta.
+            Photos used from <a href="http://www.topfish.rs" target="_blank">TopFish</a> site.
         </p>
 
         <br>
-        <h3>Prijatelji sajta:</h3>
+        <h3></h3>
         <a href="http://svetpiva.co.nf/" class="margin" target="_blank"><img src="{{asset('/images/ivke.jpg')}}" alt="pivo sajt"></a>
         <a href="http://hoverboardsu024.byethost7.com/?i=2" target="_blank" class="margin"><img src="{{asset('/images/stipke.png')}}" alt="hoverboard sajt"></a>
         <br><br>

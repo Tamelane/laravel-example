@@ -33,7 +33,8 @@ class ProductsController extends Controller
     public function search(Request $request)
     {   
         $search=$request->get('search');
+        $search=preg_replace('/[^A-Za-z0-9\-]/', '', $search);
         $products = Product::where('name','LIKE','%'.$search.'%')->get();
-    return view('products.show', compact('products'));
+        return view('products.show', compact('products'));
     }
 }

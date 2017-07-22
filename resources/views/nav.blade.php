@@ -14,7 +14,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <img src="{{asset('/images/stap.png')}}" alt="ikonica za stap" style="height: 20px; width:20px"/> Štapovi <span class="caret"></span></a>
+                    <img src="{{asset('/images/stap.png')}}" alt="ikonica za stap" style="height: 20px; width:20px"/> Rods <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="{{ route('filter_category_by_name', ['feeder']) }}">Feeder</a></li>
                     <li><a href="{{ route('filter_category_by_name', ['match']) }}">Match</a></li>
@@ -22,7 +22,7 @@
                 </ul>
             </li>
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <img src="{{asset('/images/masinica.png')}}" alt="ikonica za masinicu" style="height: 20px; width:20px"/> Mašinice <span class="caret"></span></a>
+                    <img src="{{asset('/images/masinica.png')}}" alt="ikonica za masinicu" style="height: 20px; width:20px"/> Reels <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="{{ route('filter_category_by_name', ['falcon']) }}">Falcon</a></li>
                     <li><a href="{{ route('filter_category_by_name', ['shimano']) }}">Shimano</a></li>
@@ -30,16 +30,16 @@
                 </ul>
             </li>
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <img src="{{asset('/images/varalica.png')}}" alt="ikonica za varalicu" style="height: 20px; width:20px"/> Varalice <span class="caret"></span></a>
+                    <img src="{{asset('/images/varalica.png')}}" alt="ikonica za varalicu" style="height: 20px; width:20px"/> lure <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="{{ route('filter_category_by_name', ['povrsinske']) }}">Površinske</a></li>
-                    <li><a href="{{ route('filter_category_by_name', ['specijalne']) }}">Specijalne</a></li>
+                    <li><a href="{{ route('filter_category_by_name', ['surface']) }}">surface </a></li>
+                    <li><a href="{{ route('filter_category_by_name', ['special']) }}">special</a></li>
                 </ul>
             </li>
         </ul>
         <div class="col-sm-3 col-md-3">
 {!! Form::open(array('method' => 'Get', 'class'=>'navbar-form','route' => 'search')) !!} <div class="input-group">
-{!! Form::text('first_name', '', array('class' => 'form-control','name'=>'search')) !!}<div class="input-group-btn">
+{!! Form::text('first_name', '', array('class' => 'form-control','name'=>'search','placeholder'=>'Search')) !!}<div class="input-group-btn">
 <button class="btn btn-default"><i class="glyphicon glyphicon-search"></i>  </button>   </div></div>
 {!! Form::close() !!}
         </div>
@@ -48,5 +48,5 @@
 </nav>
     <div id="header">
         <img src="{{asset('/images/logo2.png')}}" alt="logo"/>
-        <h3 class="animated fadeInLeftBig">Sve za pecanje na jednom mestu!</h3><br>
+        <h3 class="animated fadeInLeftBig"> Everything for fishing in one place!</h3><br>
     </div>
