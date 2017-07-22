@@ -47,6 +47,8 @@
             @else(Auth::guest())
             <li class=""><a class="" data-toggle="" href="{{ route('login') }}">Login</a>
             </li>
+            <li class=""><a class="" data-toggle="" href="{{ route('register') }}">Register</a>
+            </li>
             @endif
         </ul>
         <div class="col-sm-3 col-md-3">
