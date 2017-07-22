@@ -36,6 +36,18 @@
                     <li><a href="{{ route('filter_category_by_name', ['special']) }}">special</a></li>
                 </ul>
             </li>
+            @if (Auth::user()) 
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                {{ Auth::user()->name }} <span class="caret"></span> </a>
+                <ul class="dropdown-menu">
+                    <li> <a href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form></li>
+                </ul>
+            </li>
+            @else(Auth::guest())
+            <li class=""><a class="" data-toggle="" href="{{ route('login') }}">Login</a>
+            </li>
+            @endif
         </ul>
         <div class="col-sm-3 col-md-3">
 {!! Form::open(array('method' => 'Get', 'class'=>'navbar-form','route' => 'search')) !!} <div class="input-group">

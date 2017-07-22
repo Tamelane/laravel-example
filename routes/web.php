@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index', ['active_menu' => 'home']);
-})->name('home');
 
 Route::get('/products', 'ProductsController@index')->name('products');
 Route::get('/product/{id}', 'ProductsController@show')->name('product');
@@ -25,3 +22,10 @@ Route::get('/product/filter_by_category/{name}', 'ProductsController@filterByCat
 Route::get('/categories', 'CategoriesController@index')->name('categories');
 Route::get('/category/{id}', 'CategoriesController@show')->name('category');
 Route::get('/category/filter_by_name/{name}', 'CategoriesController@filterByName')->name('filter_category_by_name');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', function () {
+    return view('index', ['active_menu' => 'home']);
+})->name('home');
