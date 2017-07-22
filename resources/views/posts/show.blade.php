@@ -21,6 +21,7 @@
 <hr>
 <div class="card">
 	<div class="card-block">
+	@if (Auth::user()) 
 	<form method="POST" action="/posts/{{$post->id}}/comments">
 	{{csrf_field()}}
 		<div class="form-group">
@@ -30,7 +31,9 @@
 		<button type="submit" class="btn btn-primary">Add Comment</button>		
 		</div>
 	</form>		
+
 	@include('layouts.errors')
+	@endif
 	</div>
 </div>
 </div>

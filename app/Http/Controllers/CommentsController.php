@@ -13,13 +13,15 @@ class CommentsController extends Controller
     /*Comment::create([
     		'body'=>request('body'),
     		'post_id'=>$post->id
-    		]);*/
-        $this->validate(request(),['body'=>'required|min:2']);
+    		]);
+            'name'      => auth()->check() ? 'required' : ''*/
+        $this->validate(request(),['body'=>'required|min:2','user_id'=> auth()->check() ? '' : 'required']);
         $post->addComment(request('body'));
     	/*$comment=new Comment;
     	$comment->post_id=$post->id;
     	$comment->body=request('body');
     	$comment->save();*/
     	return back();
+
     }
 }

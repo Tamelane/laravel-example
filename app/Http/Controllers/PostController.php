@@ -24,7 +24,8 @@ class PostController extends Controller
     {
     	$this->validate(request(),[
     		'title'=>'required|min:2',
-    		'body'=>'required|min:3'
+    		'body'=>'required|min:3',
+            'user_id'=> auth()->check() ? '' : 'required'
     		]);
     	$post=new Post;
     	$post->title=request('title');
