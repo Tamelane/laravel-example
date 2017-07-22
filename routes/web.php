@@ -19,9 +19,10 @@ Route::get('/search/', 'ProductsController@search')->name('search');
 Route::get('/product/filter_by_category/{name}', 'ProductsController@filterByCategoryName')->name('filter_product_by_category_name');
 
 //Posts
-Route::get('/posts/{id}', 'PostController@index')->name('posts');
+Route::get('/posts/all', 'PostController@index');
+Route::get('/posts/{post}', 'PostController@show')->name('posts');
 Route::get('/createposts/create', 'PostController@create')->name('create');
-Route::post('/createposts/', 'PostController@store')->name('store');
+Route::post('/createposts/', 'PostController@store')->name('apc_store(key, var)');
 
 Route::get('/categories', 'CategoriesController@index')->name('categories');
 Route::get('/category/{id}', 'CategoriesController@show')->name('category');

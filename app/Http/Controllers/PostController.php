@@ -7,9 +7,11 @@ use App\Http\Controllers\Controller;
 use App\Post;
 class PostController extends Controller
 {
-    public function index(Post $id)
+    public function index()
     {
-    	return $id;
+    	$posts=Post::latest()->get();
+
+    	return view('posts.posts',compact('posts'));
     }
      public function create()
     {
@@ -32,8 +34,9 @@ class PostController extends Controller
     	//dd(request('title'));
     	$post->save();
     	return redirect('/');
-
     }
-    
-
+    public function show(Post $post)
+    {
+    	return view('posts.show',compact('post'));
+    }
 }
