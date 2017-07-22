@@ -25,6 +25,10 @@ Route::post('/posts/{post}/comments', 'CommentsController@store');
 Route::get('/createposts/create', 'PostController@create')->name('create')->middleware('auth');
 Route::post('/createposts/', 'PostController@store')->name('apc_store(key, var)');
 
+//Admin
+Route::get('/add/product','AdminController@addProduct');
+Route::post('/add/product','AdminController@storeCategory')->name('StoreCategory');
+
 Route::get('/categories', 'CategoriesController@index')->name('categories');
 Route::get('/category/{id}', 'CategoriesController@show')->name('category');
 Route::get('/category/filter_by_name/{name}', 'CategoriesController@filterByName')->name('filter_category_by_name');

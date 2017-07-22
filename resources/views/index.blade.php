@@ -11,6 +11,9 @@
 
 	
 		   <h3>This site is a school project</h3>
+           @if (Session::has('CategoryAdded'))
+              <p class="bg-danger"> {{session('CategoryAdded')}}</p>
+           @endif
         <p>
             Photos used from <a href="http://www.topfish.rs" target="_blank">TopFish</a> site.
         </p>
