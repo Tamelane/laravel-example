@@ -31,6 +31,9 @@ Route::post('/add/category','AdminController@storeCategory')->name('StoreCategor
 Route::post('/delete/category','AdminController@deleteCategory')->name('DeleteCategory');
 Route::post('/add/product','AdminController@storeProduct')->name('StoreProduct');
 Route::post('/delete/product','AdminController@deleteProduct')->name('DeleteProduct');
+//Shop
+Route::post('/add/cart','OrderController@addToCart')->name('addToCart');
+
 
 Route::get('/categories', 'CategoriesController@index')->name('categories');
 Route::get('/category/{id}', 'CategoriesController@show')->name('category');
