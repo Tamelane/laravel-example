@@ -33,7 +33,7 @@ Route::post('/add/product','AdminController@storeProduct')->name('StoreProduct')
 Route::post('/delete/product','AdminController@deleteProduct')->name('DeleteProduct');
 //Shop
 Route::post('/add/cart','OrderController@addToCart')->name('addToCart');
-
+Route::get('/add/cart','OrderController@addItemToCart')->name('addItemToCart');
 
 Route::get('/categories', 'CategoriesController@index')->name('categories');
 Route::get('/category/{id}', 'CategoriesController@show')->name('category');
@@ -45,3 +45,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', function () {
     return view('index', ['active_menu' => 'home']);
 })->name('home');
+
+Route::get('ajax',function(){
+   return view('message');
+});
+Route::get('/getmsg','AjaxController@index')->name('ajax');
