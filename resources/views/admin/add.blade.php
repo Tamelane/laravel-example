@@ -38,7 +38,7 @@
                     <div class="btn btn-default image-preview-input">
                         <span class="glyphicon glyphicon-folder-open"></span>
                         <span class="image-preview-input-title">Browse</span>
-                        <input type="file" class="form-control" accept="image/png, image/jpeg, image/gif" id="image" name="image"/> <!-- rename it -->
+                        <input type="file" class="form-control" accept="image/png, image/jpeg, image/gif" id="image" name="image"  value="image/default.png"/> <!-- rename it -->
                     </div>
                 </span>
             </div><!-- /input-group image-preview [TO HERE]--> 
@@ -55,6 +55,7 @@
   </div>
    <button type="submit" class="btn btn-primary">Add Category</button>
 </form> 
+
 <form method="POST" action="{{ route('DeleteCategory') }}"  class="container">
 
  <div class="form-group">
@@ -82,18 +83,20 @@
       <button type="submit" class="btn btn-primary">Delete Product</button></div> @endforeach
   </div>
 --}}
+<div class="container" style="margin-bottom:70px;">
+      @foreach ($products as $product)
 <form method="POST" action="{{ route('DeleteProduct') }}">
  {{ csrf_field()}}
-      @foreach ($products as $product)
-      <div class="gallery" width="300" height="200">
+      <div class="gallery" width="300" height="200" >
       <input type="hidden" name="id" value="{{ $product->id }}">
       <a target="" href="{{ route('product', [$product->id]) }}">
-      <img src="{{asset($product->picture)}}" alt="{{$product->name}}" width="300" height="200" ></a>
-      <div class="desc">{{ $product->name }} Price: {{ $product->price }} 
+      <img src="{{asset($product->picture)}}" alt="{{$product->name}}" width="300" height="200"></a>
+      <div class="desc">{{ $product->name }} Price: {{ $product->price }}
       <button type="submit" class="btn btn-primary">Delete Product</button></div>
       </div>
-    @endforeach
        </form>  
+    @endforeach
+       </div>
 <script type="text/javascript"></script>
 	@include('layouts.errors')
 @endsection

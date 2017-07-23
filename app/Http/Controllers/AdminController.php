@@ -60,7 +60,11 @@ class AdminController extends Controller
 		//$product->picture=Input::file('image');
         $product->picture=$request->image;
         //$product->$file=getClientOriginalName();
-    	$product->save();
+    	if ($product->picture==NULL) {
+            $product->picture='images/default.png';
+        }
+        //dd($product->picture);
+        $product->save();
     	Session::flash('text','Product "'.$product->name.'" '.'Added');
     	//pathinfo(Input::file('upfile')->getClientOriginalName(), PATHINFO_FILENAME);
     	/*$data = $request->session()->all();
