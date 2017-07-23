@@ -26,8 +26,9 @@ Route::get('/createposts/create', 'PostController@create')->name('create')->midd
 Route::post('/createposts/', 'PostController@store')->name('apc_store(key, var)');
 
 //Admin
-Route::get('/add/product','AdminController@addProduct');
-Route::post('/add/product','AdminController@storeCategory')->name('StoreCategory');
+Route::get('/add/category','AdminController@addCategory')->name('addCategory');
+Route::post('/add/category','AdminController@storeCategory')->name('StoreCategory');
+Route::post('/add/product','AdminController@storeProduct')->name('StoreProduct');
 
 Route::get('/categories', 'CategoriesController@index')->name('categories');
 Route::get('/category/{id}', 'CategoriesController@show')->name('category');

@@ -36,6 +36,7 @@
                     <li><a href="{{ route('filter_category_by_name', ['special']) }}">special</a></li>
                 </ul>
             </li>
+          
             @if (Auth::user()) 
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 {{ Auth::user()->name }} <span class="caret"></span> </a>
@@ -49,6 +50,12 @@
             </li>
             <li class=""><a class="" data-toggle="" href="{{ route('register') }}">Register</a>
             </li>
+            @endif
+              @if (Auth::user())
+             @if (Auth::user()->admin==1)
+                  <li class="dropdown"><a class="dropdown-toggle" href="{{ route('addCategory') }}">Admin Panel</a>
+              @endif
+              
             @endif
         </ul>
         <div class="col-sm-3 col-md-3">

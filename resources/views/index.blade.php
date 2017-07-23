@@ -14,6 +14,9 @@
            @if (Session::has('CategoryAdded'))
               <p class="bg-danger"> {{session('CategoryAdded')}}</p>
            @endif
+            @if (Session::has('ProductAdded'))
+              <p class="bg-danger"> {{session('ProductAdded')}}</p>
+           @endif
         <p>
             Photos used from <a href="http://www.topfish.rs" target="_blank">TopFish</a> site.
         </p>
