@@ -28,6 +28,7 @@ Route::post('/createposts/', 'PostController@store')->name('apc_store(key, var)'
 //Admin
 Route::get('/add/category','AdminController@addCategory')->name('addCategory');
 Route::post('/add/category','AdminController@storeCategory')->name('StoreCategory');
+Route::post('/delete/category','AdminController@deleteCategory')->name('DeleteCategory');
 Route::post('/add/product','AdminController@storeProduct')->name('StoreProduct');
 
 Route::get('/categories', 'CategoriesController@index')->name('categories');

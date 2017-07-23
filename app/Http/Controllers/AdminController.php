@@ -13,9 +13,20 @@ class AdminController extends Controller
 {
     public function addCategory()
     {
-    	$products=Product::all();
-    	return view('Admin.add',compact('products'));
+    	$categories=Category::all();
+    	return view('Admin.add',compact('categories'));
+    }  
+    public function deleteCategory(Request $request)
+    {
+        //dd(request('category'));
+       //dd(Category::where('id',25)->get());
+        //dd(Category::where('id', $request->id)->get()); 
+        //DB::table('category')->where('name', $request->category)->delete();
+        Category::where('id', request('category'))->delete();
+
+        return redirect('/');
     }
+
      public function storeCategory()
     {
     	$this->validate(request(),[
@@ -33,8 +44,10 @@ class AdminController extends Controller
     {
     	$this->validate(request(),[
     		'name'=>'required|min:1',
-    		'price'=>'required',
+    		'price'=>['required','numeric'],
     		'category'=>'required'
+
+
     		]);
 		$product=new Product;
     //   $file = request(file('image'));
