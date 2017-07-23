@@ -13,17 +13,15 @@ class AdminController extends Controller
 {
     public function addCategory()
     {
+        $products=Product::all();
     	$categories=Category::all();
-    	return view('Admin.add',compact('categories'));
+    	return view('Admin.add',compact('categories','products'));
     }  
     public function deleteCategory(Request $request)
     {
-        //dd(request('category'));
-       //dd(Category::where('id',25)->get());
-        //dd(Category::where('id', $request->id)->get()); 
-        //DB::table('category')->where('name', $request->category)->delete();
+        $flash=Category::find(request('category'));
         Category::where('id', request('category'))->delete();
-
+        Session::flash('text','Category "'.$flash->name.'" '.'Deleted');
         return redirect('/');
     }
 
@@ -35,7 +33,7 @@ class AdminController extends Controller
 		$category=new Category;
     	$category->name=request('name');
     	$category->save();
-    	Session::flash('CategoryAdded','Category "'.$category->name.'" '.'Added');
+    	Session::flash('text','Category "'.$category->name.'" '.'Added');
     	/*$data = $request->session()->all();
     	$request->session()->flash('status', 'Task was successful!');*/
     	return redirect('/');
@@ -63,10 +61,18 @@ class AdminController extends Controller
         $product->picture=$request->image;
         //$product->$file=getClientOriginalName();
     	$product->save();
-    	Session::flash('ProductAdded','Product "'.$product->name.'" '.'Added');
+    	Session::flash('text','Product "'.$product->name.'" '.'Added');
     	//pathinfo(Input::file('upfile')->getClientOriginalName(), PATHINFO_FILENAME);
     	/*$data = $request->session()->all();
     	$request->session()->flash('status', 'Task was successful!');*/
     	return redirect('/');
+    }
+    public function deleteProduct(Request $request)
+    {
+       // dd(request('id'));  
+        $flash=Product::find(request('id'));
+        Product::where('id', request('id'))->delete();
+        Session::flash('text','Product "'.$flash->name.'" '.'Deleted');
+        return redirect('/');
     }
 }

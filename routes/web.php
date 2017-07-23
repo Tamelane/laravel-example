@@ -30,6 +30,7 @@ Route::get('/add/category','AdminController@addCategory')->name('addCategory');
 Route::post('/add/category','AdminController@storeCategory')->name('StoreCategory');
 Route::post('/delete/category','AdminController@deleteCategory')->name('DeleteCategory');
 Route::post('/add/product','AdminController@storeProduct')->name('StoreProduct');
+Route::post('/delete/product','AdminController@deleteProduct')->name('DeleteProduct');
 
 Route::get('/categories', 'CategoriesController@index')->name('categories');
 Route::get('/category/{id}', 'CategoriesController@show')->name('category');

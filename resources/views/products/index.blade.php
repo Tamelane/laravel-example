@@ -12,7 +12,7 @@
 			<tr><td>	<li>
 			
 					<a href="{{ route('product', [$product->id]) }}">
-					<img src="{{asset('$product->picture')}}">	{{ $product->name }}
+					<img src="{{asset('$product->picture')}}" alt="">	{{ $product->name }}
 					</a>
 				</li>
 			</td>	</tr>

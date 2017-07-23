@@ -7,7 +7,7 @@
 @foreach ($category->products as $product)
 <div class="gallery">
 <a target="" href="{{ route('product', [$product->id]) }}">
-<img src="{{asset($product->picture)}}" alt="{{asset($product->picture)}}" width="300" height="200">
+<img src="{{asset($product->picture)}}" alt="{{$product->name}}" width="300" height="200">
   </a>
 <div class="desc">{{ $product->name }} Price: {{ $product->price }} </div>
 </div>

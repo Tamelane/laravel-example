@@ -11,12 +11,12 @@
 
 	
 		   <h3>This site is a school project</h3>
-           @if (Session::has('CategoryAdded'))
-              <p class="bg-danger"> {{session('CategoryAdded')}}</p>
+           @if (Session::has('text'))
+              <p class="bg-danger"> {{session('text')}}</p>
            @endif
-            @if (Session::has('ProductAdded'))
+            {{--@if (Session::has('ProductAdded'))
               <p class="bg-danger"> {{session('ProductAdded')}}</p>
-           @endif
+           @endif --}}
         <p>
             Photos used from <a href="http://www.topfish.rs" target="_blank">TopFish</a> site.
         </p>

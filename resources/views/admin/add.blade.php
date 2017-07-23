@@ -1,10 +1,8 @@
 @extends('layout')
 @section ('content')
-<style type="text/css">.container{
-
-}</style>
+<style type="text/css"></style>
 <br>
-<form method="POST" action="{{ route('StoreProduct') }}">
+<form method="POST" action="{{ route('StoreProduct') }}" class="container">
  {{ csrf_field()}}
   <div class="form-group">
     <label for="title">Product name: </label>
@@ -49,7 +47,7 @@
    <button type="submit" class="btn btn-primary">Add Product</button>
 </form>	
 
-<form method="POST" action="{{ route('StoreCategory') }}">
+<form method="POST" action="{{ route('StoreCategory') }}"  class="container">
  {{ csrf_field()}}
   <div class="form-group">
     <label for="title">Category name: </label>
@@ -57,8 +55,8 @@
   </div>
    <button type="submit" class="btn btn-primary">Add Category</button>
 </form> 
-<form method="POST" action="{{ route('DeleteCategory') }}">
- {{ csrf_field()}}
+<form method="POST" action="{{ route('DeleteCategory') }}"  class="container">
+
  <div class="form-group">
     <label for="category">Product category: </label>
    <select name="category" id="category" class="form-control">
@@ -69,9 +67,33 @@
     @endforeach
     </select>
  <!--    <input type="text" class="form-control" id="category" name="category" required="required" >-->
-  </div>
-   <button type="submit" class="btn btn-primary">Delete Category</button>
+  
+  </div> <button type="submit" class="btn btn-primary">Delete Category</button>
 </form> 
+{{--<div class="container">
+<form method="POST" action="{{ route('DeleteProduct') }}">
+ {{ csrf_field()}}
+  @foreach ($products as $product)
+      <div class="gallery" style="/*margin: 10px;*/">
+      
+      <a target="" href="{{ route('product', [$product->id]) }}">
+      <img src="{{asset($product->picture)}}" alt="{{$product->name}}" width="300" height="200" style="min-height: 150px;min-width: 100px; "></a>
+      <div class="desc">{{ $product->name }} Price: {{ $product->price }} </div>
+      <button type="submit" class="btn btn-primary">Delete Product</button></div> @endforeach
+  </div>
+--}}
+<form method="POST" action="{{ route('DeleteProduct') }}">
+ {{ csrf_field()}}
+      @foreach ($products as $product)
+      <div class="gallery" width="300" height="200">
+      <input type="hidden" name="id" value="{{ $product->id }}">
+      <a target="" href="{{ route('product', [$product->id]) }}">
+      <img src="{{asset($product->picture)}}" alt="{{$product->name}}" width="300" height="200" ></a>
+      <div class="desc">{{ $product->name }} Price: {{ $product->price }} 
+      <button type="submit" class="btn btn-primary">Delete Product</button></div>
+      </div>
+    @endforeach
+       </form>  
 <script type="text/javascript"></script>
 	@include('layouts.errors')
 @endsection
