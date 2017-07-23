@@ -57,7 +57,7 @@
 </form> 
 
 <form method="POST" action="{{ route('DeleteCategory') }}"  class="container">
-
+{{ csrf_field()}}
  <div class="form-group">
     <label for="category">Product category: </label>
    <select name="category" id="category" class="form-control">
@@ -86,7 +86,7 @@
 <div class="container" style="margin-bottom:70px;">
       @foreach ($products as $product)
 <form method="POST" action="{{ route('DeleteProduct') }}">
- {{ csrf_field()}}
+      {{ csrf_field()}}
       <div class="gallery" width="300" height="200" >
       <input type="hidden" name="id" value="{{ $product->id }}">
       <a target="" href="{{ route('product', [$product->id]) }}">

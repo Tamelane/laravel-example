@@ -11,12 +11,12 @@
       //   echo Form::button('Replace Message',['onClick'=>'getMessage()']);
       ?>
 
-      		<button type="submit" onclick="getMessage()" class="btn btn-primary">Add To Cart</button>
+      		<button type="submit" onclick="getMessage()" class="btn btn-primary">Add Tos Cart</button>
 
 
    </body>
      <script>
-         function getMessage(){
+         function getMessage1(){
             $.ajax({
                type:'GET',
                url:'{{ route('ajax') }}',
