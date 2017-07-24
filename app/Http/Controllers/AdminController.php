@@ -14,19 +14,10 @@ class AdminController extends Controller
 {
     public function showPanel()
     {
-       /* $categories=Category::all() ;
-        foreach ( Category::all() as $category) {
-            $categories[$category->id]=$categories->name;
-        }*/
-       /* dd(Category::all() );*/
        $items = array();
         foreach (Category::all() as $key => $value) {
-        // echo .$key.'<br>';  
          $items[$value->id]=$value->name;
         }
-       // dd($items);
-      // $items = Category::all(['id', 'name']);
-         //dd($items);
         $products=Product::all();
     	$categories=Category::all();
     	return view('admin.add',compact('categories','products','items'));
@@ -66,18 +57,14 @@ class AdminController extends Controller
             $product->picture='images/default.png';}
         else
         {
-/*
+
         $filename = Input::file('image');
         $change = $filename->getClientOriginalExtension();
-
         $newfilename = Auth::id().str_random(10).'.';
         $filename->move('images', "{$newfilename}" .$change);  
         $imageName = "{$newfilename}" .$change;
-        //$image->caption = Input::get('caption');
-        //$image->user_id = Auth::id();
-        //$image->user_name = Auth::user()->name;
-       // $image->save();
-          $request->file('image')->move(base_path() . '/public/images/', $imageName);*/
+        move_uploaded_file( $imageName,base_path() . '/public/images/');
+          $product->picture='images/'.$imageName ;
         }
         $product->save();
     	Session::flash('text','Product "'.$product->name.'" '.'Added');
