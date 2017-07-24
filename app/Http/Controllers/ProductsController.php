@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
-
+use App\Post;
 class ProductsController extends Controller
 {
 	public function index () {
@@ -15,7 +15,8 @@ class ProductsController extends Controller
     public function show ($id) {
         
     	$products = Product::find($id);
-    	return view('products.details', compact('products'));
+        $posts=Post::latest()->where('product_id',$products->id)->get();
+    	return view('products.details', compact('products','posts'));
     }
 
     public function filterByName ($name) {

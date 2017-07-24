@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" >
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -11,8 +11,8 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
+    <div class="collapse navbar-collapse" id="myNavbar" >
+        <ul class="nav navbar-nav" >
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <img src="{{asset('/images/stap.png')}}" alt="ikonica za stap" style="height: 20px; width:20px"/> Rods <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -38,7 +38,7 @@
             </li>
           
             @if (Auth::user()) 
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="text-align: right;">
                 {{ Auth::user()->name }} <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
                     <li> <a href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
@@ -58,6 +58,7 @@
               
             @endif
         </ul>
+        
         <div class="col-sm-3 col-md-3">
 {!! Form::open(array('method' => 'Get', 'class'=>'navbar-form','route' => 'search')) !!} <div class="input-group">
 {!! Form::text('first_name', '', array('class' => 'form-control','name'=>'search','placeholder'=>'Search')) !!}<div class="input-group-btn">

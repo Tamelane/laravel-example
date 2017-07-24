@@ -29,6 +29,7 @@ Route::post('/createposts/', 'PostController@store')->name('apc_store(key, var)'
 Route::get('/admin/show/','AdminController@showPanel')->name('showPanel');
 Route::post('/add/category','AdminController@storeCategory')->name('StoreCategory');
 Route::post('/delete/category','AdminController@deleteCategory')->name('DeleteCategory');
+Route::post('/update/category','AdminController@updateCategory')->name('UpdateCategory');
 Route::post('/add/product','AdminController@storeProduct')->name('StoreProduct');
 Route::post('/delete/product','AdminController@deleteProduct')->name('DeleteProduct');
 //Shop
@@ -42,6 +43,8 @@ Route::get('/category/filter_by_name/{name}', 'CategoriesController@filterByName
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//other
 Route::get('/', function () {
     return view('index', ['active_menu' => 'home']);
 })->name('home');

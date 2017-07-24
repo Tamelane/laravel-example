@@ -21,7 +21,14 @@ class AdminController extends Controller
         $products=Product::all();
     	$categories=Category::all();
     	return view('admin.add',compact('categories','products','items'));
-    }  
+    }   
+    public function updateCategory(Request $request)
+    {
+        $flash=Category::find(request('category'));
+        Category::where('id', request('category'))->update(array('name' => request('name')));
+        Session::flash('text','Category "'.$flash->name.'" '.'Updated');
+        return redirect('/admin/show/');
+    }
     public function deleteCategory(Request $request)
     {
         $flash=Category::find(request('category'));
@@ -64,7 +71,7 @@ class AdminController extends Controller
         $filename->move('images', "{$newfilename}" .$change);  
         $imageName = "{$newfilename}" .$change;
         move_uploaded_file( $imageName,base_path() . '/public/images/');
-          $product->picture='images/'.$imageName ;
+        $product->picture='images/'.$imageName ;
         }
         $product->save();
     	Session::flash('text','Product "'.$product->name.'" '.'Added');
