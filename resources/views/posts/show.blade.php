@@ -22,7 +22,8 @@
 <div class="card">
 	<div class="card-block">
 	@if (Auth::user()) 
-	<form method="POST" action="/posts/{{$post->id}}/comments">
+{{	Form::open(array('url' => 'posts/'.$post->id.'/comments', 'method' => 'POST'))}}
+<!--	<form method="POST" action="/posts/{{--$post->id--}}/comments">-->
 	{{csrf_field()}}
 		<div class="form-group">
 		<textarea name="body" placeholder="Your comment here." class="form-control" required></textarea>			

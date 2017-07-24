@@ -1,8 +1,45 @@
 @extends('layout')
 @section ('content')
+ @if (Session::has('text'))
+              <p class="bg-danger"> {{session('text')}}</p>
+           @endif
+           @include('layouts.errors')
 <style type="text/css"></style>
-<br>
-<form method="POST" action="{{ route('StoreProduct') }}" class="container">
+<br>{!! Form::open(
+    array(
+        'route' => 'StoreProduct', 
+        'class' => 'form', 
+        'files' => true)) !!}
+
+<div class="form-group">
+
+    {!! Form::label('Product Name') !!}
+</div>
+<div class="form-group">
+    {!! Form::text('name', null) !!}
+</div>
+<div class="form-group">
+    {!! Form::label('price') !!}
+</div>
+<div class="form-group">
+    {!! Form::text('price', null) !!}
+</div>
+<div class="form-group">
+    {!! Form::label('category') !!}
+{{ Form::select('category', $items,2, array('value' => '1')) }}
+</div>
+{{--<div class="form-group">
+    {!! Form::text('category', null) !!}
+</div>--}}
+<div class="form-group">
+    {!! Form::file('image', null) !!}
+</div>
+
+<div class="form-group">
+    {!! Form::submit('Create Product!') !!}
+</div>
+{!! Form::close() !!}
+{{--<form method="POST" action="{{ route('StoreProduct') }}" class="container">
  {{ csrf_field()}}
   <div class="form-group">
     <label for="title">Product name: </label>
@@ -45,7 +82,7 @@
   </div>
    <button type="submit" class="btn btn-primary">Add Product</button>
 </form>	
-
+--}}
 <form method="POST" action="{{ route('StoreCategory') }}"  class="container">
  {{ csrf_field()}}
   <div class="form-group">
@@ -72,16 +109,16 @@
       @foreach ($products as $product)
 <form method="POST" action="{{ route('DeleteProduct') }}">
       {{ csrf_field()}}
-      <div class="gallery" width="300" height="200" >
+      <div class="gallery"  >
       <input type="hidden" name="id" value="{{ $product->id }}">
       <a target="" href="{{ route('product', [$product->id]) }}">
-      <img src="{{asset($product->picture)}}" alt="{{$product->name}}" width="300" height="200"></a>
-      <div class="desc">{{ $product->name }} Price: {{ $product->price }}
+      <img src="{{asset($product->picture)}}" alt="{{$product->name}}" style="max-height:120px;"></a>
+      <div class="desc">{{ $product->name }} Price: {{ $product->price }} <br>
       <button type="submit" class="btn btn-primary">Delete Product</button></div>
       </div>
        </form>  
     @endforeach
        </div>
 <script type="text/javascript"></script>
-	@include('layouts.errors')
+	
 @endsection
