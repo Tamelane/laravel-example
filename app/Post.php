@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 use Auth;
 class Post extends Model
 {
-    //protected $fillable=['title','body'];
   	protected $fillable=['body','user_id'];
 	public function comments()
 	{
@@ -14,7 +13,6 @@ class Post extends Model
 	}
 	public function addComment($body)
 	{
-	//	$this->comments()->create(compact('data'));
 		$this->comments()->create(['user_id' => Auth::id(),'body' => $body]);
 	}
 	   public function username($id)

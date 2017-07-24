@@ -5,7 +5,6 @@
 		<h1>
 			Listing productss {{ isset($category) ? "of $category" : "" }}
 		</h1>
-
 		<ul>
 		<table>
 			@foreach ($products as $product)

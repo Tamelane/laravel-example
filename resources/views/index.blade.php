@@ -14,13 +14,9 @@
            @if (Session::has('text'))
               <p class="bg-danger"> {{session('text')}}</p>
            @endif
-            {{--@if (Session::has('ProductAdded'))
-              <p class="bg-danger"> {{session('ProductAdded')}}</p>
-           @endif --}}
         <p>
             Photos used from <a href="http://www.topfish.rs" target="_blank">TopFish</a> site.
         </p>
-
         <br>
         <h3></h3>
         <a href="http://svetpiva.co.nf/" class="margin" target="_blank"><img src="{{asset('/images/ivke.jpg')}}" alt="pivo sajt"></a>

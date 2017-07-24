@@ -53,7 +53,7 @@
             @endif
               @if (Auth::user())
              @if (Auth::user()->admin==1)
-                  <li class="dropdown"><a class="dropdown-toggle" href="{{ route('addCategory') }}">Admin Panel</a>
+                  <li class="dropdown"><a class="dropdown-toggle" href="{{ route('showPanel') }}">Admin Panel</a>
               @endif
               
             @endif

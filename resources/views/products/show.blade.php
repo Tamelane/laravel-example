@@ -18,11 +18,6 @@
 			<input type="hidden" name="quantity" value="2">
 			<button type="submit" class="btn btn-primary">Add To Cart</button> 
 			@endif
-			{{--<input type="hidden" name="quantity" value="{{ $product->id }}">
-			--}}
-			
-			
- 
 			</div></div>
 		</form>
 		@endforeach

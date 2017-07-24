@@ -7,13 +7,7 @@
 <body>
       <div id = 'msg'>This message will be replaced using Ajax. 
          Click the button to replace the messageddd.</div>
-      <?php
-      //   echo Form::button('Replace Message',['onClick'=>'getMessage()']);
-      ?>
-
       		<button type="submit" onclick="getMessage()" class="btn btn-primary">Add Tos Cart</button>
-
-
    </body>
      <script>
          function getMessage1(){
@@ -27,9 +21,8 @@
                }
             });
          }
-
          function getMessage() {
-  var xhttp = new XMLHttpRequest();
+      var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("msg").innerHTML =

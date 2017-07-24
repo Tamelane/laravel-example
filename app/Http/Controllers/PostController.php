@@ -12,7 +12,6 @@ class PostController extends Controller
     public function index()
     {
     	$posts=Post::latest()->get();
-
     	return view('posts.posts',compact('posts'));
     }
      public function create()
@@ -31,17 +30,11 @@ class PostController extends Controller
     	$post->title=request('title');
     	$post->body=request('body');
         $post->user_id=Auth::id();
-    	/*Post::create([
-    		'title'=>request('title'),
-			'body'=>request('body')
-    		]);*/
-    	//dd(request('title'));
     	$post->save();
-    	return redirect('/');
+    	return redirect('/posts/all');
     }
     public function show(Post $post)
     {
-        //dd($post);
     	return view('posts.show',compact('post'));
     }
 }

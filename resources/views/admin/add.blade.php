@@ -42,7 +42,6 @@
                     </div>
                 </span>
             </div><!-- /input-group image-preview [TO HERE]--> 
-    <!-- <input type="text" class="form-control" id="image" name="image" required="required" >--> 
   </div>
    <button type="submit" class="btn btn-primary">Add Product</button>
 </form>	
@@ -67,22 +66,8 @@
       </option>
     @endforeach
     </select>
- <!--    <input type="text" class="form-control" id="category" name="category" required="required" >-->
-  
   </div> <button type="submit" class="btn btn-primary">Delete Category</button>
 </form> 
-{{--<div class="container">
-<form method="POST" action="{{ route('DeleteProduct') }}">
- {{ csrf_field()}}
-  @foreach ($products as $product)
-      <div class="gallery" style="/*margin: 10px;*/">
-      
-      <a target="" href="{{ route('product', [$product->id]) }}">
-      <img src="{{asset($product->picture)}}" alt="{{$product->name}}" width="300" height="200" style="min-height: 150px;min-width: 100px; "></a>
-      <div class="desc">{{ $product->name }} Price: {{ $product->price }} </div>
-      <button type="submit" class="btn btn-primary">Delete Product</button></div> @endforeach
-  </div>
---}}
 <div class="container" style="margin-bottom:70px;">
       @foreach ($products as $product)
 <form method="POST" action="{{ route('DeleteProduct') }}">
